@@ -71,7 +71,7 @@ export class Graph {
           this.addVertex(vertex2);
 
           this.adjacentList.get(vertex1).add(vertex2);
-          this.adjacentList.get(vertex2).add(vertex1);
+          //this.adjacentList.get(vertex2).add(vertex1);
           return true;
         }
     return false;
@@ -83,7 +83,7 @@ export class Graph {
         vertex1 != vertex2
       ) {
           this.adjacentList.get(vertex1).delete(vertex2);
-          this.adjacentList.get(vertex2).delete(vertex1);
+          //this.adjacentList.get(vertex2).delete(vertex1);
           return true;
         }
     return false;
