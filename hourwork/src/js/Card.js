@@ -3,10 +3,9 @@ export class Card {
         this.frontText = frontText;
         this.backText = backText;
 
-        this.weight = this.weight;
+        this.weight = weight;
         this.dueDate = dueDate;
         this.nextStudyDate = this.calcNextStudyDate();
-
     }
     getFrontText() {
         return this.frontText;

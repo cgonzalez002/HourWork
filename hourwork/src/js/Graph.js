@@ -4,6 +4,7 @@ export class Graph {
   constructor(){
     this.vertices = new Set();
     this.adjacentList = new Map();
+    this.size = 0;
   }
     
   // Returns Array of All verticies in Graph
@@ -11,9 +12,12 @@ export class Graph {
     return Array.from(this.vertices)
   }
     
-  // Returns adjacency list of all verticies
+  // Returns size of graph
+  size(){
+    return this.size;
+  }
 
-  // FIX -> To work with The Node objects and their ids
+  
   getAdjacentList() {
     const list = {};
       
@@ -40,6 +44,7 @@ export class Graph {
     if( !this.vertices.has(vertex) && vertex !== null && vertex !== undefined) {
       this.vertices.add(vertex);
       this.adjacentList.set(vertex, new Set());
+      this.size++;
       return true;
     }
     return false;
@@ -55,6 +60,7 @@ export class Graph {
           value.delete(vertex);
         }
       });
+      this.size--;
       return true;    
     }
     return false;

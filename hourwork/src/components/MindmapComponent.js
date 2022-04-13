@@ -1,21 +1,32 @@
 import React, {useState} from 'react'; 
 import Graph from 'react-graph-vis';
 
-// Options for the Mindmap
+// Options for the Mindmap 
+
+// node options can be found here: https://visjs.github.io/vis-network/docs/network/nodes.html
 const options = {
   layout: {
     hierarchical: false
   },
   edges: {
-    color: "#000000"
-  }
+    color: "#000000",
+    size: 22,
+  },
+  nodes: {
+    shape: "box",
+    font: {
+      color: "#000000",
+      size: 22,
+    },
+  },
+  
 };
 
 // Generates a Hex color for a node in the mindmap
 function randomColor() {
-  const red = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
-  const green = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
-  const blue = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+  const red = Math.floor(Math.random() * (256 - 128) + 128).toString(16).padStart(2, '0');
+  const green = Math.floor(Math.random() * (256 - 128) + 128).toString(16).padStart(2, '0');
+  const blue = Math.floor(Math.random() * (256 - 128) + 128).toString(16).padStart(2, '0');
   return `#${red}${green}${blue}`;
 }
 
@@ -84,7 +95,7 @@ export function Mindmap(props) {
 
   return (
       <div>
-         <Graph graph={graph} options={options} events={events} style={{ height: "640px" }} />
+         <Graph graph={graph} options={options} events={events} style={{ height: "640px"}} />
       </div>
   )
 }
