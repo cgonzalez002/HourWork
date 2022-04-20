@@ -30,7 +30,6 @@ for(var i = 0; i < 6; i++){
 // adds a random edge from capital of MA
 mm.addEdge(card2, new Node(5, new Card("Population", "500")));
 
-
 mm.generateDeck();
 mm.pullTopCard();
 
@@ -38,19 +37,6 @@ console.log(mm);
 
 const App = () => {
   // Renders MindMap from the MindMapComponent
-  function MindMap(){
-    // allows for callback from MindmapComponent js file
-    const [node, setNode] = useState('No Node Selected')
-    
-    // returns formatted React
-    return (
-      <div>
-        <Mindmap nodes={mm.getNodes()} adjacent={mm.getEdges()} sendBackNode={node => setNode(node)}  />
-        <h4>{node}</h4>
-      </div>
-    );
-
-  }
  
   function Flashcard(){
     // React formatting
@@ -60,6 +46,19 @@ const App = () => {
       </div>
     );
   
+  }
+
+
+  function MindMap(){
+    // allows for callback from MindmapComponent js file
+    const [node, setNode] = useState('No Node Selected');
+    // returns formatted React
+    return (
+      <div>
+        <Mindmap nodes={mm.getNodes()} adjacent={mm.getEdges()} sendBackNode={node => setNode(node)}  />
+        <h4>{node}</h4>
+      </div>
+    );
   }
 
 
