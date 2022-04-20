@@ -20,15 +20,44 @@ const options = {
 
 // Generates a Hex color for a node in the mindmap
 function randomColor() {
-  const red = Math.floor(Math.random() * (256 - 128) + 128).toString(16).padStart(2, '0');
-  const green = Math.floor(Math.random() * (256 - 128) + 128).toString(16).padStart(2, '0');
-  const blue = Math.floor(Math.random() * (256 - 128) + 128).toString(16).padStart(2, '0');
+  const color1 = '#007BFF';
+  const color2 = '#2254ce';
+  const color3 = '#2097eF';
+  const color4 = '#5c83e3';
+  const color5 = '#2fc0ff';
+  const color6 = '#7b9ef3';
+  const color7 = '#b2d7ff';
+  const color8 = '#409cff';
+  const color9 = '#0097cc';
+  const color10 = '#4da1e2';
 
-  
-
-
-  return `#${red}${green}${blue}`;
+  var choice = Math.floor(Math.random() * 10);
+  switch(choice){
+    case 0:
+      return color1;
+    case 1:
+      return color2;
+    case 2:
+      return color3;
+    case 3:
+      return color4;
+    case 4:
+      return color5;
+    case 5:
+      return color6;
+    case 6:
+      return color7;
+    case 7:
+      return color8;
+    case 8:
+      return color9;
+    case 9:
+      return color10;
+    default:
+      return '#ecf0f4';
+  }
 }
+
 
 //Formats the set of nodes from a graph and reformats it for the mindmap api
 function formatNodes(nodeSet) {

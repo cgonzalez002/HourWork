@@ -12,15 +12,11 @@ export class Graph {
   }
     
   // Returns adjacency list of all verticies
-
-  // FIX -> To work with The Node objects and their ids
   getAdjacentList() {
     const list = {};
-      
     this.adjacentList.forEach((value, key) => {
       list[key] = Array.from(value)
     })
-      
     return list;
   }
 
